@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
+const cors = require('cors');
 const snapsave = require("./snapsave-downloader/src/index");
 const port = 3000;
+
+// Allow requests from all domains
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello World!" });
